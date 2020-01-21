@@ -218,7 +218,7 @@ namespace DirectOutput.Cab.Toys.Hardware
         {
             if (OutputController != null && NumberOfLeds > 0)
             {
-                OutputController.SetValues((FirstLedNumber - 1) * 3, new byte[NumberOfLeds]);
+                OutputController.SetValues((FirstLedNumber - 1) * 3, new byte[NumberOfOutputs]);
             }
         }
 
@@ -413,9 +413,9 @@ namespace DirectOutput.Cab.Toys.Hardware
                             for (int x = 0; x < Width; x++)
                             {
                                 int OutputNumber = OutputMappingTable[x, y];
-                                OutputData[OutputNumber + 1] = FadingTable[(int)Value[x, y, 0]];
-                                OutputData[OutputNumber + 2] = FadingTable[(int)Value[x, y, 1]];
-                                OutputData[OutputNumber] = FadingTable[(int)Value[x, y, 2]];
+                                OutputData[OutputNumber + 1] = FadingTable[(int)Value[x, y, 2]];
+                                OutputData[OutputNumber + 2] = FadingTable[(int)Value[x, y, 0]];
+                                OutputData[OutputNumber] = FadingTable[(int)Value[x, y, 1]];
                             }
                         }
                         break;
@@ -425,9 +425,9 @@ namespace DirectOutput.Cab.Toys.Hardware
                             for (int x = 0; x < Width; x++)
                             {
                                 int OutputNumber = OutputMappingTable[x, y];
-                                OutputData[OutputNumber + 2] = FadingTable[(int)Value[x, y, 0]];
-                                OutputData[OutputNumber] = FadingTable[(int)Value[x, y, 1]];
-                                OutputData[OutputNumber + 1] = FadingTable[(int)Value[x, y, 2]];
+                                OutputData[OutputNumber + 2] = FadingTable[(int)Value[x, y, 1]];
+                                OutputData[OutputNumber] = FadingTable[(int)Value[x, y, 2]];
+                                OutputData[OutputNumber + 1] = FadingTable[(int)Value[x, y, 0]];
                             }
                         }
                         break;

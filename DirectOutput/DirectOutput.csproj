@@ -72,8 +72,9 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ciloci.Flee">
+    <Reference Include="Ciloci.Flee, Version=0.9.27.0, Culture=neutral, PublicKeyToken=fc11e355737f8b7f, processorArchitecture=MSIL">
       <HintPath>..\packages\fleesharp.0.9.27-pre\lib\net40\Ciloci.Flee.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -127,13 +128,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Compile Include="Cab\Toys\Hardware\LedStripLamp.cs" />
+    <Compile Include="Cab\Toys\Hardware\LedStripRGBLed.cs" />
     <Compile Include="Cab\Toys\Hardware\RGBLed.cs" />
     <Compile Include="Cab\Toys\IMatrixToy.cs" />
     <Compile Include="Cab\Toys\IRGBOutputToy.cs" />
     <Compile Include="Cab\Toys\ISingleOutputToy.cs" />
+    <Compile Include="Cab\Toys\Layer\AnalogAlphaToyOnLedStrip.cs" />
     <Compile Include="Cab\Toys\Layer\ILayerToy.cs" />
     <Compile Include="Cab\Toys\Layer\MatrixDictionaryBase.cs" />
     <Compile Include="Cab\Toys\Layer\Layer.cs" />
+    <Compile Include="Cab\Toys\Layer\RGBAToyOnLedStrip.cs" />
     <Compile Include="Cab\Toys\Virtual\AnalogAlphaToyGroup.cs" />
     <Compile Include="Cab\Toys\Virtual\ToyGroupBase.cs" />
     <Compile Include="Cab\Toys\Virtual\RGBAToyGroup.cs" />
@@ -347,6 +352,7 @@
   <ItemGroup>
     <Content Include="Config\xCabinet.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="DirectOutputIcon_32.ico" />
     <Content Include="ledwiz.dll">
@@ -375,7 +381,9 @@
     <None Include="Docu\Diagramms\ToyArchitecture.cd" />
     <None Include="FX\FX.cd" />
     <None Include="Main.cd" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\DirectOutput.GlobalConfig.Config.datasource" />
     <None Include="Properties\DataSources\DirectOutput.GlobalConfig.FilePatternList.datasource" />
     <None Include="Properties\DataSources\DirectOutput.GlobalConfig.GlobalConfigEditor.datasource" />

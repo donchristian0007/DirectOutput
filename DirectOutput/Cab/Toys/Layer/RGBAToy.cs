@@ -94,8 +94,8 @@ namespace DirectOutput.Cab.Toys.Layer
 
 
         #region Fading curve
-        private string _FadingCurveName = "Linear";
-        private Curve FadingCurve = null;
+        protected string _FadingCurveName = "Linear";
+        protected Curve FadingCurve = null;
 
         /// <summary>
         /// Gets or sets the name of the fading curve as defined in the Curves list of the cabinet object.
@@ -153,7 +153,7 @@ namespace DirectOutput.Cab.Toys.Layer
             InitOutputs(Cabinet);
         }
 
-        private void InitOutputs(Cabinet Cabinet)
+        protected virtual void InitOutputs(Cabinet Cabinet)
         {
             if (Cabinet.Outputs.Contains(OutputNameRed))
             {

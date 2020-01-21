@@ -132,7 +132,7 @@ namespace DirectOutput.Cab.Toys.Layer
             InitFadingCurve(Cabinet);
         }
 
-        private void InitOutputs(Cabinet Cabinet)
+        protected virtual void InitOutputs(Cabinet Cabinet)
         {
             if (Cabinet.Outputs.Contains(OutputName))
             {
@@ -143,8 +143,6 @@ namespace DirectOutput.Cab.Toys.Layer
                 Output = null;
             }
         }
-
-
 
 
         /// <summary>
